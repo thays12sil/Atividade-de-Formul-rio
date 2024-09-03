@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <title>Cadastro de Estudante</title>
+  </head>
+  <style>
+    .form-group input {
+      width: 100%;
+      height: 40px;
+    }
+    #botao {
+      background-color: #6659f5;
+      color: white;
+      float: right;
+    }
+    #botao:hover {
+      background-color: #574cd2;
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h2 class="text-center mt-5">Cadastro de Estudante</h2>
+      <form method="post" class="mt-4">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label for="{{ form.nome_completo.id_for_label }}"
+            >Nome Completo</label
+          >
+          {{ form.nome_completo }}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.endereco_residencial.id_for_label }}"
+            >Endereço</label
+          >
+          {{ form.endereco_residencial }}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.cidade_moradia.id_for_label }}">Cidade</label>
+          {{ form.cidade_moradia }}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.email_pessoal.id_for_label }}">E-mail</label>
+          {{ form.email_pessoal }}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.nome_curso.id_for_label }}">Curso</label>
+          {{ form.nome_curso }}
+        </div>
+
+        <button type="submit" id="botao" class="btn btn-primary">
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
